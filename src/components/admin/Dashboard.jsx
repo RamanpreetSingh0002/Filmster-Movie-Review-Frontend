@@ -5,7 +5,7 @@ import { useNotification } from "../../hooks";
 import { getAppInfo } from "../../api/admin";
 import MostRatedMovies from "../MostRatedMovies";
 
-export default function Dashboard() {
+const Dashboard = () => {
   const [appInfo, setAppInfo] = useState({
     movieCount: 0,
     reviewCount: 0,
@@ -45,4 +45,6 @@ export default function Dashboard() {
       <MostRatedMovies />
     </div>
   );
-}
+};
+
+export default Dashboard;

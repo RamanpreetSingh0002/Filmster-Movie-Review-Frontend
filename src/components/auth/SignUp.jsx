@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container } from "../Container";
-import { Title } from "../form/Title";
-import { FormInput } from "../form/FormInput";
 import Submit from "../form/Submit";
-import { CustomLink } from "../CustomLink";
 import { commonModalClasses } from "../../utils/theme";
 import FormContainer from "../form/FormContainer";
 import { createUser } from "../../api/auth";
 import { useAuth, useNotification } from "../../hooks";
 import { isValidEmail } from "../../utils/helper";
+import Container from "../Container";
+import Title from "../form/Title";
+import FormInput from "../form/FormInput";
+import CustomLink from "../CustomLink";
 
 const validateUserInfo = ({ name, email, password }) => {
   const isValidName = /^[a-zA-Z]+$/;
@@ -27,7 +27,7 @@ const validateUserInfo = ({ name, email, password }) => {
   return { ok: true };
 };
 
-export const SignUp = () => {
+const SignUp = () => {
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
@@ -105,3 +105,5 @@ export const SignUp = () => {
     </FormContainer>
   );
 };
+
+export default SignUp;

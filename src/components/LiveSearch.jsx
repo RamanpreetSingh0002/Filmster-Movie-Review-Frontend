@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { commonInputClasses } from "../utils/theme";
 
-export default function LiveSearch({
+const LiveSearch = ({
   value = "",
   placeholder = "",
   results = [],
@@ -12,7 +12,7 @@ export default function LiveSearch({
   renderItem = null,
   onChange = null,
   onSelect = null,
-}) {
+}) => {
   const [displaySearch, setDisplaySearch] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const [defaultValue, setDefaultValue] = useState("");
@@ -110,7 +110,7 @@ export default function LiveSearch({
       />
     </div>
   );
-}
+};
 
 // const renderItem = ({ id, name, avatar }) => {
 //   return (
@@ -193,3 +193,5 @@ const ResultCard = forwardRef((props, ref) => {
     </div>
   );
 });
+
+export default LiveSearch;

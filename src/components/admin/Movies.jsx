@@ -9,7 +9,7 @@ import ConfirmModal from "../../models/ConfirmModal";
 let currentPageNo = 0;
 const limit = 10;
 
-export default function Movies() {
+const Movies = () => {
   // const [movies, setMovies] = useState([]);
   // const [reachedToEnd, setReachedToEnd] = useState(false);
   // const [busy, setBusy] = useState(false);
@@ -110,4 +110,6 @@ export default function Movies() {
       </div>
     </>
   );
-}
+};
+
+export default Movies;

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "../Container";
-import { Title } from "../form/Title";
-import { FormInput } from "../form/FormInput";
 import Submit from "../form/Submit";
-import { CustomLink } from "../CustomLink";
 import { commonModalClasses } from "../../utils/theme";
 import FormContainer from "../form/FormContainer";
 import { useAuth, useNotification } from "../../hooks";
 import { useNavigate } from "react-router-dom";
 import { isValidEmail } from "../../utils/helper";
+import Container from "../Container";
+import Title from "../form/Title";
+import FormInput from "../form/FormInput";
+import CustomLink from "../CustomLink";
 
 const validateUserInfo = ({ email, password }) => {
   if (!email.trim()) return { ok: false, error: "Email is missing!" };
@@ -21,7 +21,7 @@ const validateUserInfo = ({ email, password }) => {
   return { ok: true };
 };
 
-export const SignIn = () => {
+const SignIn = () => {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -83,3 +83,5 @@ export const SignIn = () => {
     </FormContainer>
   );
 };
+
+export default SignIn;

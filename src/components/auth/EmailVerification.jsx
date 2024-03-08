@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Container } from "../Container";
-import { Title } from "../form/Title";
 import Submit from "../form/Submit";
 import { commonModalClasses } from "../../utils/theme";
 import FormContainer from "../form/FormContainer";
 import { resendEmailVerificationToken, verifyUserEmail } from "../../api/auth";
 import { useAuth, useNotification } from "../../hooks";
+import Container from "../Container";
+import Title from "../form/Title";
 
 const OTP_LENGTH = 6;
 let currentOTPIndex;
@@ -23,7 +23,7 @@ const isValidOTP = otp => {
   return valid;
 };
 
-export const EmailVerification = () => {
+const EmailVerification = () => {
   const [otp, setOtp] = useState(new Array(OTP_LENGTH).fill(""));
   const [activeOtpIndex, setActiveOtpIndex] = useState(0);
 
@@ -129,9 +129,7 @@ export const EmailVerification = () => {
                   type="'number"
                   value={otp[index] || ""}
                   onChange={handleOtpChange}
-                  onKeyDown={e => {
-                    handleKeyDown(e, index);
-                  }}
+                  onKeyDown={e => handleKeyDown(e, index)}
                   className="w-12 h-12 border-2 dark:border-dark-subtle border-light-subtle dark:focus:border-white focus:border-primary rounded bg-transparent outline-none text-center dark:text-white text-primary font-semibold text-xl spin-button-none"
                 />
               );
@@ -153,3 +151,5 @@ export const EmailVerification = () => {
     </FormContainer>
   );
 };
+
+export default EmailVerification;

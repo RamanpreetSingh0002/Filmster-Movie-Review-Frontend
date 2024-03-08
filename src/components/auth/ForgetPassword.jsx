@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Title } from "../form/Title";
-import { CustomLink } from "../CustomLink";
-import { FormInput } from "../form/FormInput";
-import { Container } from "../Container";
 import Submit from "../form/Submit";
 import FormContainer from "../form/FormContainer";
 import { commonModalClasses } from "../../utils/theme";
 import { forgetPassword } from "../../api/auth";
 import { isValidEmail } from "../../utils/helper";
 import { useNotification } from "../../hooks";
+import Container from "../Container";
+import Title from "../form/Title";
+import FormInput from "../form/FormInput";
+import CustomLink from "../CustomLink";
 
-export const ForgetPassword = () => {
+const ForgetPassword = () => {
   const [email, setEmail] = useState("");
 
   const { updateNotification } = useNotification();
@@ -55,3 +55,5 @@ export const ForgetPassword = () => {
     </FormContainer>
   );
 };
+
+export default ForgetPassword;

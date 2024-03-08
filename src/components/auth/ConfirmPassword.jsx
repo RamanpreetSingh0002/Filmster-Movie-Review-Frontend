@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Container } from "../Container";
-import { Title } from "../form/Title";
-import { FormInput } from "../form/FormInput";
 import Submit from "../form/Submit";
 import FormContainer from "../form/FormContainer";
 import { commonModalClasses } from "../../utils/theme";
 import { ImSpinner3 } from "react-icons/im";
 import { useAuth, useNotification } from "../../hooks";
 import { resetPassword, verifyPasswordResetToken } from "../../api/auth";
+import Container from "../Container";
+import Title from "../form/Title";
+import FormInput from "../form/FormInput";
 
-export const ConfirmPassword = () => {
+const ConfirmPassword = () => {
   const [password, setPassword] = useState({
     one: "",
     two: "",
@@ -132,3 +132,5 @@ export const ConfirmPassword = () => {
     </FormContainer>
   );
 };
+
+export default ConfirmPassword;

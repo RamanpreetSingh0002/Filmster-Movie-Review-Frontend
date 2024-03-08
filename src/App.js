@@ -1,18 +1,18 @@
 import React from "react";
-import { Navbar } from "./components/user/navbar";
-import { SignIn } from "./components/auth/SignIn";
-import { SignUp } from "./components/auth/SignUp";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./components/Home";
-import { EmailVerification } from "./components/auth/EmailVerification";
-import { ForgetPassword } from "./components/auth/ForgetPassword";
-import { ConfirmPassword } from "./components/auth/ConfirmPassword";
-import NotFound from "./components/NotFound";
 import { useAuth } from "./hooks";
+import NotFound from "./components/NotFound";
 import AdminNavigator from "./navigator/AdminNavigator";
 import SingleMovie from "./components/user/SingleMovie";
 import MovieReviews from "./components/user/MovieReviews";
 import SearchMovies from "./components/user/SearchMovies";
+import Navbar from "./components/user/navbar";
+import Home from "./components/Home";
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
+import EmailVerification from "./components/auth/EmailVerification";
+import ForgetPassword from "./components/auth/ForgetPassword";
+import ConfirmPassword from "./components/auth/ConfirmPassword";
 
 export const App = () => {
   const { authInfo } = useAuth();

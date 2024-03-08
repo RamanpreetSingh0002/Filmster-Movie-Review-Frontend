@@ -10,8 +10,6 @@ const NextAndPrevButton = ({ className = "", OnPrevClick, OnNextClick }) => {
   );
 };
 
-export default NextAndPrevButton;
-
 const Button = ({ title, onClick }) => {
   return (
     <button
@@ -23,3 +21,5 @@ const Button = ({ title, onClick }) => {
     </button>
   );
 };
+
+export default NextAndPrevButton;

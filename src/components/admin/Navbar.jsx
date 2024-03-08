@@ -6,7 +6,7 @@ import { FaUserNinja } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../hooks";
 
-export default function Navbar() {
+const Navbar = () => {
   const { handleLogout } = useAuth();
   return (
     <nav className="w-48 min-h-screen bg-secondary border-r border-gray-300">
@@ -51,7 +51,7 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
 
 const NavItem = ({ children, to }) => {
   const commonClasses =
@@ -67,3 +67,5 @@ const NavItem = ({ children, to }) => {
     </NavLink>
   );
 };
+
+export default Navbar;

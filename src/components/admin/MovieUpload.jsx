@@ -6,7 +6,7 @@ import { uploadMovie, uploadTrailer } from "../../api/movie";
 import MovieForm from "./MovieForm";
 import ModalContainer from "../../models/ModalContainer";
 
-export default function MovieUpload({ visible, onClose }) {
+const MovieUpload = ({ visible, onClose }) => {
   const [videoSelected, setVideoSelected] = useState(false);
   const [videoUploaded, setVideoUploaded] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -96,7 +96,7 @@ export default function MovieUpload({ visible, onClose }) {
       )}
     </ModalContainer>
   );
-}
+};
 
 const TrailerSelector = ({ visible, handleChange, onTypeError }) => {
   if (!visible) return null;
@@ -133,3 +133,5 @@ const UploadProgress = ({ width, message, visible }) => {
     </div>
   );
 };
+
+export default MovieUpload;

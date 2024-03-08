@@ -29,8 +29,6 @@ const MovieList = ({ title, movies = [] }) => {
   );
 };
 
-export default MovieList;
-
 const ListItem = ({ movie }) => {
   const { id, title, responsivePosters, poster, reviews } = movie;
 
@@ -53,3 +51,5 @@ const ListItem = ({ movie }) => {
     </Link>
   );
 };
+
+export default MovieList;

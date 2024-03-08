@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "../Container";
 import CustomButtonLink from "../CustomButtonLink";
 import RatingStar from "../RatingStar";
 import { useParams } from "react-router-dom";
@@ -9,6 +8,7 @@ import { BsTrash, BsPencilSquare } from "react-icons/bs";
 import ConfirmModal from "../../models/ConfirmModal";
 import NotFoundText from "../NotFoundText";
 import EditRatingModal from "../../models/EditRatingModal";
+import Container from "../Container";
 
 const getNameInitial = (name = "") => {
   return name[0].toUpperCase();

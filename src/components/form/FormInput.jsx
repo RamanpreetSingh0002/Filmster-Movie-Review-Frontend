@@ -1,6 +1,6 @@
 import React from "react";
 
-export const FormInput = ({ name, label, placeholder, ...rest }) => {
+const FormInput = ({ name, label, placeholder, ...rest }) => {
   return (
     <div className="flex flex-col-reverse">
       <input
@@ -19,3 +19,5 @@ export const FormInput = ({ name, label, placeholder, ...rest }) => {
     </div>
   );
 };
+
+export default FormInput;

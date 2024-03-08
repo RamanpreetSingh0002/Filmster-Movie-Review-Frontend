@@ -4,7 +4,7 @@ import { searchPublicMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
 import NotFoundText from "../NotFoundText";
 import MovieList from "./MovieList";
-import { Container } from "../Container";
+import Container from "../Container";
 
 const SearchMovies = () => {
   const [movies, setMovies] = useState([]);

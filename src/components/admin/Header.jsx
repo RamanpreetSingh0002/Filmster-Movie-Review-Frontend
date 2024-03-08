@@ -5,7 +5,7 @@ import { useTheme } from "../../hooks";
 import AppSearchForm from "../form/AppSearchForm";
 import { useNavigate } from "react-router-dom";
 
-export default function Header({ onAddMovieClick, onAddActorClick }) {
+const Header = ({ onAddMovieClick, onAddActorClick }) => {
   const [showOptions, setShowOptions] = useState(false);
   const { toggleTheme } = useTheme();
 
@@ -52,7 +52,7 @@ export default function Header({ onAddMovieClick, onAddActorClick }) {
       </div>
     </div>
   );
-}
+};
 
 const CreateOptions = ({ options, visible, onClose }) => {
   const container = useRef();
@@ -123,3 +123,5 @@ const Option = ({ children, onClick }) => {
     </button>
   );
 };
+
+export default Header;

@@ -1,12 +1,12 @@
 import React from "react";
 // ref: react-icon (google)
 import { BsFillSunFill } from "react-icons/bs";
-import { Container } from "../Container";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, useTheme } from "../../hooks";
 import AppSearchForm from "../form/AppSearchForm";
+import Container from "../Container";
 
-export const Navbar = () => {
+const Navbar = () => {
   const { toggleTheme } = useTheme();
   const { authInfo, handleLogout } = useAuth();
   const { isLoggedIn } = authInfo;
@@ -64,3 +64,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;

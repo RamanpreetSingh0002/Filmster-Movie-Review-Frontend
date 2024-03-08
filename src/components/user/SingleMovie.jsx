@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { getSingleMovie } from "../../api/movie";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth, useNotification } from "../../hooks";
-import { Container } from "../Container";
 import RatingStar from "../RatingStar";
 import RelatedMovies from "../RelatedMovies";
 import AddRatingModal from "../../models/AddRatingModal";
 import CustomButtonLink from "../CustomButtonLink";
 import ProfileModal from "../../models/ProfileModal";
 import { convertReviewCount } from "../../utils/helper";
+import Container from "../Container";
 
 const convertDate = date => {
   return date.split("T")[0];

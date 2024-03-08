@@ -11,7 +11,7 @@ import ConfirmModal from "../../models/ConfirmModal";
 let currentPageNo = 0;
 const limit = 20;
 
-export default function Actors() {
+const Actors = () => {
   const [actors, setActors] = useState([]);
   const [results, setResults] = useState([]);
   const [reachedToEnd, setReachedToEnd] = useState(false);
@@ -163,7 +163,7 @@ export default function Actors() {
       />
     </>
   );
-}
+};
 
 const ActorProfile = ({ profile, onEditClick, onDeleteClick }) => {
   const [showOptions, setShowOptions] = useState(false);
@@ -240,3 +240,5 @@ const Options = ({ visible, onDeleteClick, onEditClick }) => {
     </div>
   );
 };
+
+export default Actors;
