@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ModalContainer from "./ModalContainer";
-import ActorForm from "../components/form/ActorForm";
-import { createActor } from "../api/actor";
-import { useNotification } from "../hooks";
+import ModalContainer from "../../models/ModalContainer";
+import ActorForm from "../form/ActorForm";
+import { createActor } from "../../api/actor";
+import { useNotification } from "../../hooks";
 
 const ActorUpload = ({ visible, onClose }) => {
   const [busy, setBusy] = useState(false);

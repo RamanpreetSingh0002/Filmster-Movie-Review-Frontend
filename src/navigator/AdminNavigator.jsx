@@ -7,7 +7,7 @@ import Actors from "../components/admin/Actors";
 import Navbar from "../components/admin/Navbar";
 import Header from "../components/admin/Header";
 import MovieUpload from "../components/admin/MovieUpload";
-import ActorUpload from "../models/ActorUpload";
+import ActorUpload from "../components/admin/ActorUpload";
 import SearchMovies from "../components/admin/SearchMovies";
 
 export default function AdminNavigator() {

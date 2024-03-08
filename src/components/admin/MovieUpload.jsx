@@ -71,7 +71,13 @@ const MovieUpload = ({ visible, onClose }) => {
   };
 
   return (
-    <ModalContainer visible={visible}>
+    <ModalContainer
+      visible={visible}
+      onClose={() => {
+        resetState();
+        onClose();
+      }}
+    >
       {videoSelected && (
         <div className="mb-5">
           <UploadProgress
