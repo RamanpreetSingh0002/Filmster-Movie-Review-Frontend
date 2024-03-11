@@ -63,19 +63,19 @@
 
 /* for our slide show */
 .slide-in-from-right {
-  animation: slideInFromRight 0.5s ease-in;
+  animation: slideInFromRight 0.8s ease-in;
 }
 
 .slide-out-to-left {
-  animation: slideOutToLeft 0.5s ease-in;
+  animation: slideOutToLeft 0.8s ease-in;
 }
 
 .slide-in-from-left {
-  animation: slideInFromLeft 0.5s ease-in;
+  animation: slideInFromLeft 0.8s ease-in;
 }
 
 .slide-out-to-right {
-  animation: slideOutToRight 0.5s ease-in;
+  animation: slideOutToRight 0.8s ease-in;
 }
 
 @keyframes slideInFromRight {

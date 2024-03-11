@@ -156,8 +156,8 @@ const HeroSlideShow = () => {
         {/* current slide */}
         <Slide
           ref={slideRef}
-          title={currentSlide.title}
-          src={currentSlide.poster}
+          title={currentSlide?.title}
+          src={currentSlide?.poster}
           id={currentSlide.id}
         />
 
@@ -166,8 +166,8 @@ const HeroSlideShow = () => {
           ref={clonedSlideRef}
           onAnimationEnd={handleAnimationEnd}
           className="absolute inset-0"
-          src={clonedSlide.poster}
-          title={clonedSlide.title}
+          src={clonedSlide?.poster}
+          title={clonedSlide?.title}
           id={currentSlide.id}
         />
 
