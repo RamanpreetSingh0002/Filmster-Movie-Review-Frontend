@@ -1,23 +1,27 @@
 import React from "react";
 import GridContainer from "../GridContainer";
-import { Link } from "react-router-dom";
-import RatingStar from "../RatingStar";
-import { getPoster } from "../../utils/helper";
+import { useNavigate } from "react-router-dom";
+import CustomButtonLink from "../CustomButtonLink";
+import ListItem from "./ListItem";
 
-const trimTitle = (text = "") => {
-  if (text.length <= 20) return text;
-  return text.substring(0, 20) + "..";
-};
-
-const MovieList = ({ title, movies = [] }) => {
+const MovieList = ({ title, movies = [], query = "" }) => {
   if (!movies.length) return null;
+
+  const navigate = useNavigate();
+
+  const findAllMovieList = () => {
+    navigate("/movie/type-related?type=" + query);
+  };
 
   return (
     <div>
       {title && (
-        <h1 className="text-2xl dark:text-white text-secondary font-semibold mb-5">
-          {title}
-        </h1>
+        <div className="flex justify-between items-center mb-5">
+          <h1 className="text-2xl dark:text-white text-secondary font-semibold">
+            {title}
+          </h1>
+          <CustomButtonLink label={"View All"} onClick={findAllMovieList} />
+        </div>
       )}
 
       <GridContainer>
@@ -26,29 +30,6 @@ const MovieList = ({ title, movies = [] }) => {
         })}
       </GridContainer>
     </div>
-  );
-};
-
-const ListItem = ({ movie }) => {
-  const { id, title, responsivePosters, poster, reviews } = movie;
-
-  return (
-    <Link to={"/movie/" + id}>
-      <img
-        className="aspect-video object-cover w-full"
-        src={getPoster(responsivePosters) || poster}
-        alt={title}
-      />
-
-      <h1
-        className="text-lg dark:text-white text-secondary font-semibold"
-        title={title}
-      >
-        {trimTitle(title)}
-      </h1>
-
-      <RatingStar rating={reviews.ratingAvg} />
-    </Link>
   );
 };
 

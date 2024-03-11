@@ -5,6 +5,8 @@ import TopRatedWebSeries from "./user/TopRatedWebSeries";
 import TopRatedTVSeries from "./user/TopRatedTvSeries";
 import HeroSlideShow from "./user/HeroSlideShow";
 import Container from "./Container";
+import TopRatedDocumentary from "./user/TopRatedDocumentary";
+import TopRatedShortFilm from "./user/TopRatedShortFilm";
 
 const Home = () => {
   return (
@@ -20,6 +22,8 @@ const Home = () => {
           <TopRatedMovies />
           <TopRatedWebSeries />
           <TopRatedTVSeries />
+          <TopRatedDocumentary />
+          <TopRatedShortFilm />
         </div>
       </Container>
     </div>

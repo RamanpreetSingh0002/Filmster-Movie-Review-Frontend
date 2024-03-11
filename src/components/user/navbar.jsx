@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-secondary shadow-sm shadow-gray-500">
+    <div className="fixed z-10 w-full bg-secondary shadow-sm shadow-gray-500">
       <Container className="p-2">
         <div className="flex justify-between items-center">
           <Link to="/">

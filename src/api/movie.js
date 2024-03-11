@@ -159,3 +159,15 @@ export const searchPublicMovies = async title => {
     return catchError(error);
   }
 };
+
+export const getTypeRelatedMovies = async (type, pageNo, limit, signal) => {
+  try {
+    const { data } = await client(
+      `/movie/type-related?type=${type}&pageNo=${pageNo}&limit=${limit}`,
+      { signal }
+    );
+    return data;
+  } catch (error) {
+    return catchError(error);
+  }
+};

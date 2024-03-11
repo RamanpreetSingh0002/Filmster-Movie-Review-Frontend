@@ -24,7 +24,7 @@ const TopRatedMovies = () => {
     };
   }, []);
 
-  return <MovieList title="Viewers choice (Movies)" movies={movies} />;
+  return <MovieList title="Movies" movies={movies} query="Film" />;
 };
 
 export default TopRatedMovies;

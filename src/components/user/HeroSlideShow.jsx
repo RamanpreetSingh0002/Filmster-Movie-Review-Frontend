@@ -5,7 +5,7 @@ import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 let count = 0;
-let intervalId;
+let intervalId = null;
 
 let newTime = 0;
 let lastTime = 0;
@@ -31,6 +31,8 @@ const HeroSlideShow = () => {
   };
 
   const startSlideShow = () => {
+    if (intervalId !== null) clearInterval(intervalId);
+
     intervalId = setInterval(() => {
       newTime = Date.now();
 
@@ -42,19 +44,31 @@ const HeroSlideShow = () => {
   };
 
   const pauseSlideShow = () => {
-    clearInterval(intervalId);
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
   };
 
   const updateUpNext = currentIndex => {
     if (!slides.length) return;
 
-    const upNextCount = currentIndex + 1;
-    const end = upNextCount + 3;
+    let newSlides = [];
 
-    let newSlides = [...slides];
-    newSlides = newSlides.slice(upNextCount, end);
+    const totalSlides = slides.length;
 
-    if (!newSlides.length) newSlides = [...slides].slice(0, 3);
+    for (let i = 1; i <= 3; i++) {
+      const nextIndex = (currentIndex + i) % totalSlides;
+      newSlides.push(slides[nextIndex]);
+    }
+
+    // const upNextCount = currentIndex + 1;
+    // const end = upNextCount + 3;
+
+    // let newSlides = [...slides];
+    // newSlides = newSlides.slice(upNextCount, end);
+
+    // if (!newSlides.length) newSlides = [...slides].slice(0, 3);
 
     setUpNext([...newSlides]);
   };
@@ -103,8 +117,14 @@ const HeroSlideShow = () => {
 
   const handleOnVisibilityChange = () => {
     const visibility = document.visibilityState;
-    if (visibility === "hidden") setVisible(false);
-    if (visibility === "visible") setVisible(true);
+    if (visibility === "hidden") {
+      pauseSlideShow();
+      setVisible(false);
+    }
+    if (visibility === "visible") {
+      startSlideShow();
+      setVisible(true);
+    }
   };
 
   useEffect(() => {

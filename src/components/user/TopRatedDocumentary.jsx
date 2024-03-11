@@ -3,13 +3,13 @@ import { getTopRatedMovies } from "../../api/movie";
 import { useNotification } from "../../hooks";
 import MovieList from "./MovieList";
 
-const TopRatedWebSeries = () => {
+const TopRatedDocumentary = () => {
   const [movies, setMovies] = useState([]);
 
   const { updateNotification } = useNotification();
 
   const fetchMovies = async signal => {
-    const { error, movies } = await getTopRatedMovies("Web Series", signal);
+    const { error, movies } = await getTopRatedMovies("Documentary", signal);
     // const { error, movies } = await getTopRatedMovies(null, signal);
     if (error) return updateNotification("error", error);
 
@@ -25,7 +25,7 @@ const TopRatedWebSeries = () => {
     };
   }, []);
 
-  return <MovieList title="Web Series" movies={movies} query="Web Series" />;
+  return <MovieList title="Documentary" movies={movies} query="Documentary" />;
 };
 
-export default TopRatedWebSeries;
+export default TopRatedDocumentary;

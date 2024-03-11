@@ -9,8 +9,8 @@ const TopRatedTVSeries = () => {
   const { updateNotification } = useNotification();
 
   const fetchMovies = async signal => {
-    // const { error, movies } = await getTopRatedMovies("TV Series",signal);
-    const { error, movies } = await getTopRatedMovies(null, signal);
+    const { error, movies } = await getTopRatedMovies("TV Series", signal);
+    // const { error, movies } = await getTopRatedMovies(null, signal);
     if (error) return updateNotification("error", error);
 
     setMovies([...movies]);
@@ -25,7 +25,7 @@ const TopRatedTVSeries = () => {
     };
   }, []);
 
-  return <MovieList title="Viewers choice (TV Series)" movies={movies} />;
+  return <MovieList title="TV Series" movies={movies} query="TV Series" />;
 };
 
 export default TopRatedTVSeries;
