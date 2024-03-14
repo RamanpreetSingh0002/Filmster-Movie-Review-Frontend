@@ -158,7 +158,7 @@ const HeroSlideShow = () => {
           ref={slideRef}
           title={currentSlide?.title}
           src={currentSlide?.poster}
-          id={currentSlide.id}
+          id={currentSlide?.id}
         />
 
         {/* cloned slide */}
@@ -168,7 +168,7 @@ const HeroSlideShow = () => {
           className="absolute inset-0"
           src={clonedSlide?.poster}
           title={clonedSlide?.title}
-          id={currentSlide.id}
+          id={currentSlide?.id}
         />
 
         <SlideShowController
