@@ -5,9 +5,9 @@ import CustomButtonLink from "../CustomButtonLink";
 import ListItem from "./ListItem";
 
 const MovieList = ({ title, movies = [], query = "" }) => {
-  if (!movies.length) return null;
-
   const navigate = useNavigate();
+
+  if (!movies.length) return null;
 
   const findAllMovieList = () => {
     navigate("/movie/type-related?type=" + query);
