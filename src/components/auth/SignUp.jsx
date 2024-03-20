@@ -12,7 +12,7 @@ import FormInput from "../form/FormInput";
 import CustomLink from "../CustomLink";
 
 const validateUserInfo = ({ name, email, password }) => {
-  const isValidName = /^[a-zA-Z]+$/;
+  const isValidName = /^[a-zA-Z]+(?: [a-zA-Z]+)*$/;
 
   if (!name.trim()) return { ok: false, error: "Name is missing!" };
   if (!isValidName.test(name)) return { ok: false, error: "Invalid name!" };
