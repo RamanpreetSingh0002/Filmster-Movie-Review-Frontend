@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import MovieListItem from "./MovieListItem";
-import { deleteMovie, getMovieForUpdate, getMovies } from "../api/movie";
+// import { deleteMovie, getMovieForUpdate, getMovies } from "../api/movie";
 import { useMovies, useNotification } from "../hooks";
-import ConfirmModal from "../models/ConfirmModal";
-import UpdateMovie from "../models/UpdateMovie";
+// import ConfirmModal from "../models/ConfirmModal";
+// import UpdateMovie from "../models/UpdateMovie";
 
 const pageNo = 0;
 const limit = 5;
