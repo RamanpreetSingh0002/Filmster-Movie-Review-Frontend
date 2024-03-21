@@ -154,26 +154,22 @@ const HeroSlideShow = () => {
       {/* Slide Show Section */}
       <div className="md:w-4/5 w-full aspect-video relative overflow-hidden">
         {/* current slide */}
-        {currentSlide?.title && (
-          <>
-            <Slide
-              ref={slideRef}
-              title={currentSlide.title}
-              src={currentSlide.poster}
-              id={currentSlide.id}
-            />
+        <Slide
+          ref={slideRef}
+          title={currentSlide?.title}
+          src={currentSlide?.poster}
+          id={currentSlide?.id}
+        />
 
-            {/* // cloned slide */}
-            <Slide
-              ref={clonedSlideRef}
-              onAnimationEnd={handleAnimationEnd}
-              className="absolute inset-0"
-              src={clonedSlide.poster}
-              title={clonedSlide.title}
-              id={currentSlide.id}
-            />
-          </>
-        )}
+        {/* cloned slide */}
+        <Slide
+          ref={clonedSlideRef}
+          onAnimationEnd={handleAnimationEnd}
+          className="absolute inset-0"
+          src={clonedSlide?.poster}
+          title={clonedSlide?.title}
+          id={currentSlide?.id}
+        />
 
         <SlideShowController
           onPrevClick={handleOnPrevClick}
@@ -186,11 +182,11 @@ const HeroSlideShow = () => {
         <h1 className="font-semibold text-2xl text-primary dark:text-white">
           Up Next
         </h1>
-        {upNext.map(({ poster, id }) => {
+        {upNext.map(slide => {
           return (
             <img
-              key={id}
-              src={poster}
+              key={slide?.id}
+              src={slide?.poster}
               alt=""
               className="aspect-video object-cover rounded"
             />
