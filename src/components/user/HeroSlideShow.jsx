@@ -154,22 +154,26 @@ const HeroSlideShow = () => {
       {/* Slide Show Section */}
       <div className="md:w-4/5 w-full aspect-video relative overflow-hidden">
         {/* current slide */}
-        <Slide
-          ref={slideRef}
-          title={currentSlide.title}
-          src={currentSlide.poster}
-          id={currentSlide.id}
-        />
+        {currentSlide.title && (
+          <>
+            <Slide
+              ref={slideRef}
+              title={currentSlide.title}
+              src={currentSlide.poster}
+              id={currentSlide.id}
+            />
 
-        {/* cloned slide */}
-        <Slide
-          ref={clonedSlideRef}
-          onAnimationEnd={handleAnimationEnd}
-          className="absolute inset-0"
-          src={clonedSlide.poster}
-          title={clonedSlide.title}
-          id={currentSlide.id}
-        />
+            {/* // cloned slide */}
+            <Slide
+              ref={clonedSlideRef}
+              onAnimationEnd={handleAnimationEnd}
+              className="absolute inset-0"
+              src={clonedSlide.poster}
+              title={clonedSlide.title}
+              id={currentSlide.id}
+            />
+          </>
+        )}
 
         <SlideShowController
           onPrevClick={handleOnPrevClick}
