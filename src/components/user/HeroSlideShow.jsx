@@ -53,22 +53,22 @@ const HeroSlideShow = () => {
   const updateUpNext = currentIndex => {
     if (!slides.length) return;
 
-    let newSlides = [];
+    // let newSlides = [];
 
-    const totalSlides = slides.length;
+    // const totalSlides = slides.length;
 
-    for (let i = 1; i <= 3; i++) {
-      const nextIndex = (currentIndex + i) % totalSlides;
-      newSlides.push(slides[nextIndex]);
-    }
+    // for (let i = 1; i <= 3; i++) {
+    //   const nextIndex = (currentIndex + i) % totalSlides;
+    //   newSlides.push(slides[nextIndex]);
+    // }
 
-    // const upNextCount = currentIndex + 1;
-    // const end = upNextCount + 3;
+    const upNextCount = currentIndex + 1;
+    const end = upNextCount + 3;
 
-    // let newSlides = [...slides];
-    // newSlides = newSlides.slice(upNextCount, end);
+    let newSlides = [...slides];
+    newSlides = newSlides.slice(upNextCount, end);
 
-    // if (!newSlides.length) newSlides = [...slides].slice(0, 3);
+    if (!newSlides.length) newSlides = [...slides].slice(0, 3);
 
     setUpNext([...newSlides]);
   };
