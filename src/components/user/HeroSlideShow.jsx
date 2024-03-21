@@ -154,7 +154,7 @@ const HeroSlideShow = () => {
       {/* Slide Show Section */}
       <div className="md:w-4/5 w-full aspect-video relative overflow-hidden">
         {/* current slide */}
-        {currentSlide.title && (
+        {currentSlide?.title && (
           <>
             <Slide
               ref={slideRef}
