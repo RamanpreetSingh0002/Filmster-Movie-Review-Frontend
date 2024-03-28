@@ -62,6 +62,7 @@ const AuthProvider = ({ children }) => {
   const handleLogout = () => {
     localStorage.removeItem("auth-token");
 
+    navigate("/");
     setAuthInfo({ ...defaultAuthInfo });
   };
 
