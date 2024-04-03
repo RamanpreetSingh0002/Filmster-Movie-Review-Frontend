@@ -10,7 +10,10 @@ const ProfileModal = ({ visible, profileId, onClose }) => {
   const { updateNotification } = useNotification();
 
   const fetchActorProfile = async () => {
+    setBusy(true);
     const { error, actor } = await getActorProfile(profileId);
+    setBusy(false);
+
     if (error) return updateNotification("error", error);
 
     setProfile(actor);
