@@ -14,7 +14,7 @@ const Navbar = () => {
         <ul>
           <li className="mb-8">
             <Link to="/">
-              {/* <img src="./logo.png" alt="logo" className="h-14 p-2" /> */}
+              <img src="./Filmster.png" alt="Filmster" className="h-14 p-2" />
             </Link>
           </li>
 
